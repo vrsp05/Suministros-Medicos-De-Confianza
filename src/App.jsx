@@ -47,11 +47,20 @@ function App() {
             </p>
             <div className="border-t border-gray-200 pt-6">
               <p className="text-lg text-gray-700 font-semibold mb-3">Estamos orgullosos de ofrecer:</p>
-              <ul className="space-y-3 text-base text-gray-700 font-medium">
+              <ul className="space-y-3 text-base text-gray-700 font-medium mb-8">
                 <li>✓ <span className="font-bold text-blue-900">Suministros educativos y de demostración</span> de alta calidad para instituciones médicas</li>
                 <li>✓ Productos <span className="font-bold text-blue-900">esterilizados y sellados</span> en condición prácticamente nueva</li>
                 <li>✓ Soluciones perfectas para <span className="font-bold text-blue-900">capacitación, entrenamiento y fines didácticos</span></li>
               </ul>
+              <div className="text-center">
+                <p className="text-gray-600 font-medium mb-4">¿Quieres conocer nuestro catálogo completo?</p>
+                <a 
+                  href="#productos" 
+                  className="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-md"
+                >
+                  Ver Nuestros Productos
+                </a>
+              </div>
             </div>
           </div>
         </div>
