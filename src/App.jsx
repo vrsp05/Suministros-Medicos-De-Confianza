@@ -6,21 +6,32 @@ import ProductTable from './ProductTable';
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState(null);
+
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNuuoro0FF1OQY3k-cmf5J3inRBKANhaE53ibImioaBuhJ5Z62J1CF4VOU48Y_JH9wCw/exec";
+
+  const fetchProducts = async () => {
+    try {
+      const res = await fetch(SCRIPT_URL);
+      const data = await res.json();
+      setProducts(data);
+      setLastUpdated(new Date());
+      setLoading(false);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    // Live Google Sheets API URL
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNuuoro0FF1OQY3k-cmf5J3inRBKANhaE53ibImioaBuhJ5Z62J1CF4VOU48Y_JH9wCw/exec";
+    // Fetch on initial load
+    fetchProducts();
 
-    fetch(SCRIPT_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching data:", err);
-        setLoading(false);
-      });
+    // Set up interval to refresh every 2 hours (7200000 milliseconds)
+    const interval = setInterval(fetchProducts, 7200000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -101,8 +112,23 @@ function App() {
               <h2 className="text-4xl font-bold text-gray-900 tracking-tight">Catálogo de Productos</h2>
               <p className="text-blue-600 font-medium mt-2 uppercase tracking-widest text-xs">Inventario actualizado en tiempo real</p>
             </div>
-            <p className="text-gray-400 text-sm mt-4 md:mt-0 font-medium italic">Mostrando {products.length} artículos disponibles</p>
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mt-4 md:mt-0">
+              <p className="text-gray-400 text-sm font-medium italic">Mostrando {products.length} artículos disponibles</p>
+              <button
+                onClick={fetchProducts}
+                disabled={loading}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+              >
+                🔄 Actualizar
+              </button>
+            </div>
           </div>
+
+          {lastUpdated && (
+            <div className="mb-4 text-center text-xs text-gray-500 font-medium">
+              Última actualización: {lastUpdated.toLocaleString('es-ES')}
+            </div>
+          )}
 
           {/* DISCLAIMER BOX - Para Productos */}
           <div className="mb-8 p-6 bg-red-50 rounded-2xl border-2 border-red-200 shadow-md">
@@ -142,7 +168,7 @@ function App() {
                 Envíenos los detalles de su requerimiento y nos pondremos en contacto con usted.
               </p>
               <p className="text-center text-blue-600 mb-12 max-w-md mx-auto leading-relaxed font-bold">
-                ⏱️ Respuesta en 1 a 3 días hábiles
+                ⏱️ Respuesta en 1 a 3 días hábiles.
               </p>
               <ContactForm />
             </div>

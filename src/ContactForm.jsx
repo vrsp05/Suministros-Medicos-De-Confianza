@@ -122,7 +122,11 @@ export default function ContactForm() {
         <button type="submit" className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-bold">
           Enviar Mensaje
         </button>
-        <p className="text-center text-sm mt-2 text-gray-600">{result}</p>
+        {result && (
+          <div className={`mt-4 p-4 rounded-lg text-center font-semibold text-base ${result.includes('éxito') ? 'bg-green-50 text-green-800 border-2 border-green-200' : 'bg-red-50 text-red-800 border-2 border-red-200'}`}>
+            {result}
+          </div>
+        )}
       </form>
 
       {/* Disclaimer Modal */}
