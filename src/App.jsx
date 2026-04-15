@@ -37,7 +37,7 @@ function App() {
             Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
           </h1>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-            Garantizando que las instituciones de salud en América Latina cuenten con el equipo necesario para salvar vidas.
+            Suministrando a las instituciones de salud en América Latina materiales de capacitación y demostración de calidad para el entrenamiento de profesionales médicos.
           </p>
           
           <div className="mt-16 p-10 bg-white rounded-[2rem] shadow-xl shadow-blue-900/5 border border-white relative">
