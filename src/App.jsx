@@ -56,7 +56,7 @@ function App() {
                 <p className="text-gray-600 font-medium mb-4">¿Quieres conocer nuestro catálogo completo?</p>
                 <a 
                   href="#productos" 
-                  className="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
+                  className="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-lg !text-white"
                 >
                   Ver Nuestros Productos
                 </a>

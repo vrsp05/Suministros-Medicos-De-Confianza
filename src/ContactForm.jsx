@@ -37,7 +37,7 @@ export default function ContactForm() {
 
   const handleConfirmSubmit = async () => {
     if (!agreedToTerms) {
-      alert("Por favor acepta los términos para continuar");
+      setValidationErrors(prev => ({ ...prev, checkbox: "Debes aceptar los términos para continuar" }));
       return;
     }
 
@@ -136,8 +136,7 @@ export default function ContactForm() {
                 Confirma que entiendes la siguiente información sobre nuestros productos:
               </p>
               <ul className="space-y-3 text-sm text-red-800 font-medium">
-                <li>✓ Los productos have <span className="font-bold">fecha de vencimiento expirada</span></li>
-                <li>✓ Están <span className="font-bold">esterilizados y sellados</span> en condición nueva</li>
+                <li>✓ Los productos tienen <span className="font-bold">fecha de vencimiento expirada</span></li>
                 <li>✓ Solo se utilizarán con <span className="font-bold">propósitos educativos y de demostración</span></li>
                 <li>✓ <span className="font-bold">NO</span> serán utilizados en pacientes o clínicamente</li>
               </ul>
@@ -148,19 +147,26 @@ export default function ContactForm() {
                 type="checkbox" 
                 id="agree" 
                 checked={agreedToTerms}
-                onChange={(e) => setAgreedToTerms(e.target.checked)}
+                onChange={(e) => {
+                  setAgreedToTerms(e.target.checked);
+                  if (e.target.checked) {
+                    setValidationErrors(prev => ({ ...prev, checkbox: "" }));
+                  }
+                }}
                 className="mt-1 w-5 h-5 cursor-pointer accent-blue-600"
               />
               <label htmlFor="agree" className="text-sm text-gray-700 font-medium cursor-pointer">
                 Confirmo que he leído y acepto que los productos son solo para uso educativo y de demostración.
               </label>
             </div>
+            {validationErrors.checkbox && <p className="text-red-600 text-sm mb-6 font-semibold bg-red-50 p-3 rounded-lg">{validationErrors.checkbox}</p>}
 
             <div className="flex gap-3">
               <button
                 onClick={() => {
                   setShowModal(false);
                   setAgreedToTerms(false);
+                  setValidationErrors(prev => ({ ...prev, checkbox: "" }));
                 }}
                 className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg font-bold hover:bg-gray-800 transition-colors"
               >
@@ -168,8 +174,7 @@ export default function ContactForm() {
               </button>
               <button
                 onClick={handleConfirmSubmit}
-                disabled={!agreedToTerms}
-                className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors"
               >
                 Enviar Mensaje
               </button>
