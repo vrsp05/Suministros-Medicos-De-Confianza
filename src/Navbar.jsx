@@ -54,7 +54,7 @@ export default function Navbar() {
           
           {/* Brand Name */}
           <div className="flex-shrink-0 text-lg md:text-xl font-bold text-blue-900 tracking-tight">
-            Jason James <span className="text-blue-600 font-medium">Médicos</span>
+            Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
           </div>
 
           {/* Desktop Navigation */}

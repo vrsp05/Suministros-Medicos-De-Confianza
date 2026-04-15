@@ -56,9 +56,9 @@ export default function ProductTable({ data }) {
             value={filtering}
             onChange={e => setFiltering(e.target.value)}
             placeholder="Buscar en miles de productos..."
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none shadow-sm"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none shadow-sm transition-all"
           />
-          <span className="absolute left-3 top-3.5 text-gray-400">🔍</span>
+          <span className="absolute left-3 top-3.5 text-gray-400 pointer-events-none">🔍</span>
         </div>
 
         {/* Export Button */}
