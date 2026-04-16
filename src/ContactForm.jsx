@@ -43,14 +43,14 @@ export default function ContactForm() {
 
     setResult("Enviando...");
     const submitFormData = new FormData();
-    submitFormData.append("access_key", "37074da3-37dd-4809-85f4-abe3b669a204");
+    submitFormData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
     submitFormData.append("name", formData.name);
     submitFormData.append("subject", formData.subject);
     submitFormData.append("email", formData.email);
     submitFormData.append("message", formData.message);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch(import.meta.env.VITE_CONTACT_SCRIPT_URL, {
         method: "POST",
         body: submitFormData
       });

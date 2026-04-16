@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNuuoro0FF1OQY3k-cmf5J3inRBKANhaE53ibImioaBuhJ5Z62J1CF4VOU48Y_JH9wCw/exec";
+  const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   const fetchProducts = async () => {
     try {
