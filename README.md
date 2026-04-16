@@ -1,16 +1,46 @@
-# React + Vite
+# Jason James - Medical Supplies of Quality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the digital platform of **Jason James - Medical Supplies of Quality**, an innovative project designed to facilitate access to high-quality medical products.
 
-Currently, two official plugins are available:
+> If you want to see the real website, [click here](https://sumin-med-de-conf.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
 
-## React Compiler
+This web application was specially developed for Dr. Jason James, an outstanding healthcare professional committed to providing excellent medical supply solutions for healthcare institutions and medical professionals. The platform offers:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Product Catalog**: An interactive and comprehensive table of medical supplies with detailed information for each item
+- **Contact Form**: Integrated contact system for inquiries, orders, and personalized attention
+- **Intuitive Interface**: Responsive and modern design built with React and Tailwind CSS for optimal user experience
+- **Data Management**: Advanced features for data handling and export with Excel file support
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Integrated catalog of medical products
+- Functional contact form with Web3Forms integration
+- Product table with search and filtering capabilities
+- Responsive and accessible design
+- Intuitive navigation bar
+- Smooth navigation and enhanced user experience
+
+## Technology Stack
+
+- **React 19** - Modern library for building user interfaces
+- **Vite** - Fast and efficient build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Table (TanStack)** - Advanced table components
+- **XLSX** - Support for data import/export
+- **PostCSS** - Advanced CSS processing
+
+## Forms and Services
+
+The project integrates external services for critical functionalities:
+- **Web3Forms**: Secure form management for contact forms
+- **Google Apps Script**: Automatic data processing
+
+## License
+
+All rights reserved © 2026 Medical Supplies of Confidence.
+
+## Credits
+
+Developed by [Victor Santana](https://github.com/vrsp05)

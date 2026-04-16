@@ -184,14 +184,14 @@ function App() {
           <div className="h-px w-20 bg-gray-100 mx-auto my-6"></div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
-            <p className="text-gray-600 text-sm font-medium">Made by <span className="font-bold text-gray-900">Victor Santana</span></p>
+            <p className="text-gray-600 text-sm font-medium">Hecho por <span className="font-bold text-gray-900">Victor Santana</span></p>
             <span className="hidden md:inline text-gray-300">•</span>
             <a href="https://github.com/vrsp05" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors">
               GitHub
             </a>
           </div>
           
-          <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Suministros Médicos de Confianza. All rights reserved.</p>
+          <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Suministros Médicos de Confianza. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
