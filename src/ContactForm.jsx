@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function ContactForm() {
   const [result, setResult] = useState("");
-  const [formData, setFormData] = useState({ name: "", subject: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", company: "", email: "", message: "" });
   const [validationErrors, setValidationErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -10,7 +10,7 @@ export default function ContactForm() {
   const validateForm = () => {
     const errors = {};
     if (!formData.name.trim()) errors.name = "El nombre completo es requerido";
-    if (!formData.subject.trim()) errors.subject = "Hospital/Empresa es requerido";
+    if (!formData.company.trim()) errors.company = "Hospital/Empresa es requerido";
     if (!formData.email.trim()) errors.email = "El correo electrónico es requerido";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = "Por favor ingresa un correo válido";
     if (!formData.message.trim()) errors.message = "El mensaje/pedido es requerido";
@@ -45,7 +45,9 @@ export default function ContactForm() {
     const submitFormData = new FormData();
     submitFormData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
     submitFormData.append("name", formData.name);
-    submitFormData.append("subject", formData.subject);
+    submitFormData.append("subject", "NEW ORDER: Suministros Médicos de Confianza");
+    submitFormData.append("from_name", "Suministros Médicos LATAM");
+    submitFormData.append("company", formData.company);
     submitFormData.append("email", formData.email);
     submitFormData.append("message", formData.message);
 
@@ -59,7 +61,7 @@ export default function ContactForm() {
 
       if (data.success) {
         setResult("¡Mensaje enviado con éxito! Nos pondremos en contacto dentro de 1 a 3 días hábiles.");
-        setFormData({ name: "", subject: "", email: "", message: "" });
+        setFormData({ name: "", company: "", email: "", message: "" });
         setAgreedToTerms(false);
         setShowModal(false);
       } else {
@@ -90,12 +92,12 @@ export default function ContactForm() {
           <label className="block text-sm font-medium text-gray-700">Hospital / Empresa</label>
           <input 
             type="text" 
-            name="subject" 
-            value={formData.subject}
+            name="company" 
+            value={formData.company}
             onChange={handleInputChange}
-            className={`mt-1 block w-full rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-gray-900 bg-white ${validationErrors.subject ? 'border-red-500' : 'border-gray-300'}`} 
+            className={`mt-1 block w-full rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-gray-900 bg-white ${validationErrors.company ? 'border-red-500' : 'border-gray-300'}`} 
           />
-          {validationErrors.subject && <p className="text-red-500 text-sm mt-1">{validationErrors.subject}</p>}
+          {validationErrors.company && <p className="text-red-500 text-sm mt-1">{validationErrors.company}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Correo Electrónico</label>
