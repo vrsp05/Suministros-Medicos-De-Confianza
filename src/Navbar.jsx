@@ -53,8 +53,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           
           {/* Brand Name */}
-          <div className="flex-shrink-0 text-lg md:text-xl font-bold text-blue-900 tracking-tight">
-            Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <img src="/Medical Global Preparacion Log no-BG.png" alt="Logo" className="h-12 md:h-16" />
+            <div className="text-lg md:text-xl font-bold text-blue-900 tracking-tight">
+              Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
