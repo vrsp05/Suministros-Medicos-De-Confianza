@@ -44,7 +44,7 @@ function App() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
         
         <div className="max-w-5xl mx-auto text-center">
-          <img src="/Medical Global Preparacion Log no-BG.png" alt="Medica Global Preparacion Logo" className="h-32 md:h-48 mx-auto mb-8" />
+          <img src="/Medical Global Preparacion Log no-BG.png" alt="Medica Global Preparacion Logo" className="h-40 md:h-56 mx-auto mb-8" />
           <h1 className="text-5xl md:text-6xl font-black text-blue-900 mb-6 tracking-tight">
             Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
           </h1>
