@@ -54,8 +54,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           
           {/* Brand Name */}
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <img src={logoImage} alt="Logo" className="h-10 md:h-12" />
+          <div className="flex-shrink-0 flex items-center gap-3 min-w-0">
+            <img src={logoImage} alt="Logo" className="hidden sm:block h-10 md:h-12 flex-shrink-0" />
             <div className="text-lg md:text-xl font-bold text-blue-900 tracking-tight">
               Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
             </div>
