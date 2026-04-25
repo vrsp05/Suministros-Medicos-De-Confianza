@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/YOUR_REPO_NAME/',
+  base: '/Suministros-Medicos-De-Confianza/',
   plugins: [react()],
 })
