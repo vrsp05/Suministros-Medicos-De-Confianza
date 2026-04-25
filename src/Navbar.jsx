@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import logoImage from '../public/Medical Global Preparacion Log no-BG.png';
 
 const useIntersectionObserver = (sectionIds) => {
   const [activeSection, setActiveSection] = useState('inicio');
@@ -54,7 +55,7 @@ export default function Navbar() {
           
           {/* Brand Name */}
           <div className="flex-shrink-0 flex items-center gap-3">
-            <img src="/Medical Global Preparacion Log no-BG.png" alt="Logo" className="h-10 md:h-12" />
+            <img src={logoImage} alt="Logo" className="h-10 md:h-12" />
             <div className="text-lg md:text-xl font-bold text-blue-900 tracking-tight">
               Suministros Médicos <span className="text-blue-600 font-light">de Confianza</span>
             </div>
