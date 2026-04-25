@@ -2,7 +2,7 @@
 
 Welcome to the digital platform of **Trustworthy Medical Supplies**, an innovative project designed to facilitate access to high-quality medical products.
 
-> If you want to see the real website, [click here](https://sumin-med-de-conf.netlify.app/)
+> If you want to see the real website, [click here](https://vrsp05.github.io/Suministros-Medicos-De-Confianza/)
 
 ## Project Description
 
